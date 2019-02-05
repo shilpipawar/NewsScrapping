@@ -1,9 +1,7 @@
 body { background-image: url(../img/home1.jpg) }
   #wrapper {
-    width: 960px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 5%;
   }
   #articles {
     display: inline-block;
@@ -11,7 +9,7 @@ body { background-image: url(../img/home1.jpg) }
     width: 60%;
     height: 700px;
   }
-  #notes {
+  #news {
     float: right;
     width: 30%;
   }

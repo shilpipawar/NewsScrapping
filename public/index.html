@@ -22,48 +22,30 @@
         <li class="active"><a href="#">Home</a></li>
         <li><a href="/articles">Saved Articles</a></li>
         <li><a href="/scrape">Scrape New Articles</a></li>
-        <li><a href="#">Clear Artcles</a></li>
+        <li><a href="#" id = "clear">Clear Artcles</a></li>
       </ul>
     </div>
   </nav>
 
   <div id="wrapper">
-    <h1>News Scraper</h1>
-    <div id="articles"></div>
-    <div id="news"></div>
+     <h1>News Scraper</h1>
+    <!--<div id="articles"></div>-->
+    <div id="news"></div> 
+  <div class="container-fluid article-container">
+    <div class="card" id="articles"> 
+      <div class="card-header">
+        <h3>
+          <a class="btn btn-success save">Save Article</a>
+        </h3>
+      </div>
+      <div class="card-body"></div>
+    </div>
   </div>
-  <!-- <div class="container-fluid article-container">
-    <div data-_id="5c57b3f9cc018d0014bbcac2" class="card">
-      <div class="card-header">
-        <h3>
-          <a class="article-link" target="_blank" rel="noopener noreferrer" href="https://www.nytimes.com/2019/02/03/us/politics/democrats-race-virginia.html">Trump
-            Behaves One Way on Race. Democrats Demand Better from Their Own.The Governor Who Partied Like It’s
-            1884Virginia Governor, Refusing to Resign Over Photo, Risks Democrats’ Future</a>
-          <a class="btn btn-success save">Save Article</a>
-        </h3>
-      </div>
-      <div class="card-body">Mr. Northam moonwalked in blackface as Michael Jackson for a 1980s dance contest. But he
-        showed no sense of history and little shame, our critic writes.Gov. Ralph Northam’s turmoil is erupting at a
-        pivotal moment for his state’s Democrats, who are on the brink of consolidating power.</div>
-    </div>
-    <div data-_id="5c57a27fcc018d0014bbcabd" class="card">
-      <div class="card-header">
-        <h3>
-          <a class="article-link" target="_blank" rel="noopener noreferrer" href="https://www.nytimes.com/2019/02/03/us/politics/northam-governor-virginia.html">Virginia
-            Governor, Refusing to Resign Over Photo, Risks Democrats’ FutureUnited Against Northam, Democrats Show
-            Centrality of Race in Trump EraThe Governor Who Partied Like It’s 1884</a>
-          <a class="btn btn-success save">Save Article</a>
-        </h3>
-      </div>
-      <div class="card-body">President Trump’s divisive behavior has pushed Democrats to try to set an example by
-        confronting misconduct in their ranks.Mr. Northam moonwalked in blackface as Michael Jackson for a 1980s dance
-        contest. But he showed no sense of history and little shame, our critic writes.</div>
-    </div>
-  </div> -->
-
+</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 

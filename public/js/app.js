@@ -3,7 +3,8 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    // $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>" + "<h3>" + "<a class='btn btn-success save'" + "data-id='" + data[i]._id + "'>" + 'Save Article' + "</a></h3>")
   }
 });
 
@@ -71,3 +72,6 @@ $(document).on("click", "#savenote", function() {
 });
 
 // db.users.deleteMany({})
+$(document).on("click", "#clear", function(){
+//Clear data
+});
