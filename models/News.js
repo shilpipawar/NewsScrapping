@@ -12,6 +12,10 @@ var NewsSchema = new Schema({
   newsURL:  {
     type: String,
     required: true
+  },
+  article: {
+    type: Schema.Types.ObjectId,
+    ref: "Article"
   }
 });
 

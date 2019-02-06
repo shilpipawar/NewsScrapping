@@ -8,10 +8,6 @@ var ArticleSchema = new Schema({
   link: {
     type: String,
     required: true
-  },
-  news: {
-    type: Schema.Types.ObjectId,
-    ref: "News"
   }
 });
 

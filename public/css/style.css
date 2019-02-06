@@ -7,7 +7,7 @@ body { background-image: url(../img/home1.jpg) }
   #articles {
     display: inline-block;
     overflow: auto;
-    width: 30%;
+    width: 50%;
     height: 700px;
   }
   #news {
