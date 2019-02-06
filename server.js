@@ -25,34 +25,36 @@ app.get("/scrape", function(req, res) {
     var $ = cheerio.load(response.data);
     $(".headline").each(function(i, element) {
       var result = {};
-      result.title = $(this)
+      result.headline = $(this)
         .children("a")
         .text();
-      result.link = $(this)
+      result.newsURL = $(this)
         .children("a")
         .attr("href");
       // Create a new Article using the `result` object built from scraping
-      db.Article.create(result)
-        .then(function(dbArticle) {
-          console.log(dbArticle);
+      db.News.create(result)
+        .then(function(dbNews) {
+          console.log(dbNews);
         })
         .catch(function(err) {
           console.log(err);
         });
     });
-    res.send("Scrape Complete");
+    res.send("Scrape Complete!!");
   });
 });
 
 // Route for getting all Articles from the db
 app.get("/articles", function(req, res) {
-  db.Article.find({})
-    .then(function(dbArticle) {
+  db.News.find({})
+    .then(function(dbArticle) { 
+      //console.log(dbArticle);
       res.json(dbArticle);
     })
     .catch(function(err) {
       res.json(err);
     });
+    //res.send("Saved Articles");
 });
 
 // Route for grabbing a specific Article by id, populate it with it's note

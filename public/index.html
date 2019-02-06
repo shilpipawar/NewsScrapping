@@ -20,31 +20,31 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="/articles">Saved Articles</a></li>
-        <li><a href="/scrape">Scrape New Articles</a></li>
-        <li><a href="#" id = "clear">Clear Artcles</a></li>
+        <!-- <li><a href="/articles">Saved Articles</a></li> -->
+        <!-- <li><a href="/scrape">Scrape New Articles</a></li> -->
+        <!-- <li><a href="#" id="clear">Clear Artcles</a></li> -->
+        <li><a class="btn btn-danger scrape">Scrape New Articles</a></li>
+        <li><a class="btn btn-danger save">Saved Articles</a> </li>
+        <li><a class="btn btn-danger clear">Clear</a></li>
       </ul>
     </div>
   </nav>
-
-  <div id="wrapper">
-     <h1>News Scraper</h1>
-    <!--<div id="articles"></div>-->
-    <div id="news"></div> 
-  <div class="container-fluid article-container">
-    <div class="card" id="articles"> 
-      <div class="card-header">
-        <h3>
-          <a class="btn btn-success save">Save Article</a>
-        </h3>
-      </div>
-      <div class="card-body"></div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>News Scraper</h1>
+      <div id="articles"></div>
+    </div>
+    <div class="col-sm-6">
+      <h2>Saved Articles</h2>
+      <div id="news"></div>
     </div>
   </div>
-</div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/app.js"></script>
 </body>

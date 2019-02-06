@@ -2,11 +2,17 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var NewsSchema = new Schema({
   // Headline - the title of the article
-  Headline: String,
+  headline:  {
+    type: String,
+    required: true
+  },
   // Summary - a short summary of the article
-  Summary: String,
+  // Summary: String,
   //URL - the url to the original article
-  newsURL: String
+  newsURL:  {
+    type: String,
+    required: true
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method

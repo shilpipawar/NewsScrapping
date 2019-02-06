@@ -1,11 +1,49 @@
 // Grab the articles as a json
-$.getJSON("/articles", function(data) {
-  // For each one
-  for (var i = 0; i < data.length; i++) {
-    // Display the apropos information on the page
-    // $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-    $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>" + "<h3>" + "<a class='btn btn-success save'" + "data-id='" + data[i]._id + "'>" + 'Save Article' + "</a></h3>")
-  }
+// $.getJSON("/articles", function(data) {
+//   // For each one
+//   for (var i = 0; i < data.length; i++) {
+//     // Display the apropos information on the page
+//     // $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+//     $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + 
+//     "</p>" + "<h3>" + "<a class='btn btn-success save'" + "data-id='" + data[i]._id + "'>" 
+//     + 'Save Article' + "</a></h3>");
+//   }
+// });
+
+//Scrape Button
+$(document).on("click", ".scrape", function() {
+
+  $("#news").empty();
+  var thisId = $(this).attr("data-id");
+
+  // Now make an ajax call for the Article
+  $.ajax({
+    method: "GET",
+    url: "/scrape"
+  }).then(function(data) {
+      console.log(data);
+      alert("Scraped News!!")
+    });
+});
+
+//Saved Article
+$(document).on("click", ".save", function() {
+  $("#news").empty();
+  console.log("Article");
+  var thisId = $(this).attr("data-id");
+  // Now make an ajax call for the Article
+  $.ajax({
+    method: "GET",
+    url: "/articles"
+  }).then(function(data) {
+      console.log("SHILPA" + data);
+      for (var i = 0; i < data.length; i++) {
+        $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].headline + "<br/>" 
+        + data[i].newsURL + 
+        "</p>" + "<h3>" + "<a class='btn btn-success save'" + "data-id='" + data[i]._id + "'>" 
+        + 'Save Article' + "</a></h3>");
+      }
+    });
 });
 
 // Whenever someone clicks a p tag
