@@ -1,15 +1,3 @@
-// Grab the articles as a json
-// $.getJSON("/articles", function(data) {
-//   // For each one
-//   for (var i = 0; i < data.length; i++) {
-//     // Display the apropos information on the page
-//     // $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-//     $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + 
-//     "</p>" + "<h3>" + "<a class='btn btn-success save'" + "data-id='" + data[i]._id + "'>" 
-//     + 'Save Article' + "</a></h3>");
-//   }
-// });
-
 //Scrape Button
 $(document).on("click", ".scrape", function() {
 
@@ -40,19 +28,22 @@ $(document).on("click", ".save", function() {
       for (var i = 0; i < data.length; i++) {
         $("#news").append("<p data-id='" + data[i]._id + "'>" + data[i].headline + "<hr>" 
         + "URL:" + data[i].newsURL + 
-        "</p>" + "<h3>" + "<a class='btn btn-success save'" + "data-id='" + data[i]._id + "'>" 
-        + 'Save Article' + "</a></h3>");
+        "</p>" + "<h3>" + "<a class='btn btn-success save btnSave'" + "data-id='" + data[i]._id + "'>" 
+        + 'Save Article' + "</a>" + 
+        "<a class='btn btn-success save btnSave'" + "data-id='" + data[i]._id + "'>" 
+        + 'Clear Article' + "</a>"
+        + "</h3>");
       }
     });
 });
 
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$(document).on("click", ".btnSave", function() {
   // Empty the news from the note section
   $("#articles").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
-
+  console.log("Inside" + thisId);
   // Now make an ajax call for the Article
   $.ajax({
     method: "GET",
@@ -62,7 +53,7 @@ $(document).on("click", "p", function() {
     .then(function(data) {
       console.log(data);
       // The title of the article
-      $("#articles").append("<h2>" + data.title + "</h2>");
+      $("#articles").append("<h2>" + data.headline + "</h2>");
       // An input to enter a new title
       $("#articles").append("<input id='titleinput' name='title' >");
       // A textarea to add a new note body
@@ -101,7 +92,7 @@ $(document).on("click", "#savenote", function() {
       // Log the response
       console.log(data);
       // Empty the news section
-      $("#news").empty();
+      $("#articles").empty();
     });
 
   // Also, remove the values entered in the input and textarea for note entry
@@ -110,6 +101,13 @@ $(document).on("click", "#savenote", function() {
 });
 
 // db.users.deleteMany({})
-$(document).on("click", "#clear", function(){
-//Clear data
+$(document).on("click", ".clear", function(){
+  console.log("CLEAR START");
+$.ajax({
+  method: "DELETE",
+  url: "/delete",
+}).then(function(data) {   
+    console.log("CLEAR SUCCESS" + data);
+  });
+
 });

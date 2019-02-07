@@ -5,7 +5,7 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  link: {
+  body: {
     type: String,
     required: true
   }

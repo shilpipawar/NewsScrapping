@@ -57,12 +57,9 @@ app.get("/articles", function(req, res) {
     //res.send("Saved Articles");
 });
 
-// Route for grabbing a specific Article by id, populate it with it's note
 app.get("/articles/:id", function(req, res) {
-  // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+  console.log("Article by id");
   db.News.findOne({ _id: req.params.id })
-    // ..and populate all of the notes associated with it
-    .populate("article")
     .then(function(dbArticle) {
       // If we were able to successfully find an Article with the given id, send it back to the client
       res.json(dbArticle);
@@ -86,6 +83,18 @@ app.post("/articles/:id", function(req, res) {
       // If an error occurred, send it to the client
       res.json(err);
     });
+});
+//Clear - db.users.deleteMany({})
+// Route for getting all Articles from the db
+app.delete("/delete", function(req, res) {
+  db.News.deleteMany({})
+    .then(function(result) { 
+      console.log(result);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+    res.send("Deleted All Saved News");
 });
 
 // Start the server
