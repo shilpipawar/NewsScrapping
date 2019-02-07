@@ -84,8 +84,8 @@ app.post("/articles/:id", function(req, res) {
       res.json(err);
     });
 });
+
 //Clear - db.users.deleteMany({})
-// Route for getting all Articles from the db
 app.delete("/delete", function(req, res) {
   db.News.deleteMany({})
     .then(function(result) { 
@@ -96,7 +96,18 @@ app.delete("/delete", function(req, res) {
     });
     res.send("Deleted All Saved News");
 });
-
+//Clear by id
+app.delete("/delete/:id", function(req, res) {
+  db.News.findOneAndDelete({ _id: req.params.id })
+    .then(function(result) {
+     console.log(result);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+    res.send("Deleted Selected Saved Article");
+});
 // Start the server
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
