@@ -72,6 +72,7 @@ app.get("/articles/:id", function(req, res) {
 
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", function(req, res) {
+  console.log(req.body);
   db.Article.create(req.body)
     .then(function(dbArticle) {
       return db.News.findOneAndUpdate({ _id: req.params.id }, { article: dbArticle._id }, { new: true });
